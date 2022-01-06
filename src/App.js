@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import axios from "axios";
+// import Character from "./Character";
+import Characters from "./Characters";
+import Map from "./Map";
 
 function App() {
+  const apiData = "http://localhost:3007/api/characters";
+
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      const results = await axios.get(apiData);
+      setCharacters(results.data);
+      console.log(results.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Character /> */}
+      <Map />
+      <Characters char={characters} />
     </div>
   );
 }
