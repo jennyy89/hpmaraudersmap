@@ -1,0 +1,27 @@
+/* background */
+
+body {
+  background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg");
+  min-height: 300vh;
+  cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+  font-family: "IM Fell English", "Lucida Handwriting", cursive;
+}
+
+.main-content {
+  text-align: center;
+  margin: 8em auto;
+}
+
+.map-base {
+  width: 306px;
+  height: 600px;
+  margin: auto;
+  background: url("https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/9.png")
+    center center / cover;
+  position: relative;
+  display: inline-block;
+}
+
+.mapbtn {
+  cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+}

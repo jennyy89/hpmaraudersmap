@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 // import Character from "./Character";
 import Characters from "./Characters";
+import Map from "./Map";
 
 function App() {
   const apiData = "http://localhost:3007/api/characters";
@@ -25,8 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      Learn React
       {/* <Character /> */}
+      <Map />
       <Characters char={characters} />
     </div>
   );
