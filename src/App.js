@@ -3,6 +3,7 @@ import "./App.css";
 import axios from "axios";
 // import Character from "./Character";
 import Characters from "./Characters";
+import FootSteps from "./FootSteps";
 import Map from "./Map";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
     <div className="App">
       {/* <Character /> */}
       <Map />
+      <FootSteps char={characters} />
       <Characters char={characters} />
     </div>
   );
