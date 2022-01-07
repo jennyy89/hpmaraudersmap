@@ -1,0 +1,20 @@
+.scroll-name {
+  position: absolute;
+  bottom: 105px;
+  left: -60px;
+  width: 150px;
+  height: 30px;
+  font: 15px Satisfy, cursive;
+  text-align: center;
+  background: url("https://rawcdn.githack.com/aakashapoorv/Marauder-Map-in-React/38904ba2bd14605682c10e56bd306597fb334c22/public/img/scroll.svg")
+    center center/cover;
+  z-index: 10;
+  color: #615349;
+  cursor: default;
+  opacity: 0;
+}
+.scroll-name p {
+  display: inline-block;
+  margin: 4px 0 0 15px;
+  color: red;
+}

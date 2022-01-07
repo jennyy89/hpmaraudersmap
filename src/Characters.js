@@ -1,8 +1,6 @@
 import React from "react";
 
 export default function Characters({ char }) {
-  console.log(char);
-
   return (
     <section>
       {char.map((charac, index) => (
