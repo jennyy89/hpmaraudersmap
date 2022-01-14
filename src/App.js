@@ -6,24 +6,26 @@ import Characters from "./Characters";
 import FootSteps from "./FootSteps";
 import Map from "./Map";
 
+import MongoCharacters from "./MongoCharacters";
+
 function App() {
   const apiData = "http://localhost:3007/api/characters";
 
   const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
-  const getData = async () => {
-    try {
-      const results = await axios.get(apiData);
-      setCharacters(results.data);
-      console.log(results.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const getData = async () => {
+  //   try {
+  //     const results = await axios.get(apiData);
+  //     setCharacters(results.data);
+  //     console.log(results.data);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   return (
     <div className="App">
@@ -31,6 +33,7 @@ function App() {
       <Map />
       <FootSteps char={characters} />
       <Characters char={characters} />
+      <MongoCharacters/>
     </div>
   );
 }
