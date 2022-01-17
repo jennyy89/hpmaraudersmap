@@ -41,7 +41,7 @@ export default function OpenMap() {
             alt=""
           />
         </div>
-      </div>{/* <div className="right"> */}
+       {/* <div className="right">  */}
       <div className="map-side front sectionWap">
         <img
           src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/8.png"
