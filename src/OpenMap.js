@@ -28,7 +28,7 @@ export default function OpenMap() {
   const info = [1, 2, 3];
   const newPut = [1, 2, 3];
   return (
-    <div className="openmapwrap">
+    <div className="openmapwrap containerSteps">
       {/* <div className="back"> */}
       <div className="map-side front sectionWap">
         <img
@@ -77,19 +77,17 @@ export default function OpenMap() {
           alt=""
         />
       </div>
-      ;
-      <div className="containerSteps">
-        {people.map((person, index) => {
-          return (
-            <Footsteps
-              person={person}
-              handleDisplay={handleDisplay}
-              index={index}
-              key={index}
-            />
-          );
-        })}
-      </div>
+
+      {people.map((person, index) => {
+        return (
+          <Footsteps
+            person={person}
+            handleDisplay={handleDisplay}
+            index={index}
+            key={index}
+          />
+        );
+      })}
       {isClicked.map((value, index) => {
         return (
           value && (

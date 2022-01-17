@@ -1,8 +1,8 @@
 /* background */
 
 body {
-  /* background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg"); */
-  background-color: rgb(24, 21, 21);
+  background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg");
+  /* background-color: rgb(24, 21, 21); */
   cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
   font-family: "IM Fell English", "Lucida Handwriting", cursive;
 }
