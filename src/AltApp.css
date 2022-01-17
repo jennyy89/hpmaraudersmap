@@ -1,20 +1,9 @@
-.backgr {
+body {
   cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
   /* 
   background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg"); */
   /* background-color: rgba(0, 0, 0, 1); */
   font-family: "IM Fell English", "Lucida Handwriting", cursive;
-}
-
-.backgr::before {
-  content: "";
-  background-image: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg");
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.75;
 }
 
 .intro {
