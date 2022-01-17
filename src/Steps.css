@@ -1,0 +1,103 @@
+.footSteps{
+        position:absolute;
+        left:var(--x1);
+        top:var(--y1);
+        transform: rotate(var(--v1));
+        animation: walk var(--t1) ease-in-out var(--t2) infinite forwards;
+        /* Note to remember this crap: 
+                animation-name: 
+                animation-duration: 
+                animation-timing-function: 
+                animation-delay: 
+                animation-iteration-count: 
+                animation-direction:  */
+        animation-fill-mode: forwards;
+}
+.nameTag{
+        padding-top: 15px;
+        width: 170px;
+        height: 50px;
+        font: 16px Satisfy, cursive;
+        text-align: center;
+        background-image: url('./img/scroll.svg');
+        background-size: cover;
+        background-position: 40% 55%;
+        position:absolute;
+        left:var(--x1);
+        top:var(--y1);
+        transform: translate(-60px, -60px);
+        animation: name var(--t1) ease-in-out var(--t2) infinite forwards;
+        animation-fill-mode: forwards;
+}
+
+@keyframes walk {
+0% {    left:var(--x1);
+        top:var(--y1);}
+20% {   
+        left:var(--x2);
+        top:var(--y2);
+        transform: rotate(var(--v1));
+}
+25% {   
+        left:var(--x2);
+        top:var(--y2);
+        transform: rotate(var(--v2));
+}
+50%{   left:var(--x3);
+        top:var(--y3);
+        transform: rotate(var(--v2))}
+55%{   left:var(--x3);
+        top:var(--y3);
+        transform: rotate(var(--v3))}
+95% {    left:var(--x1);
+        top:var(--y1);
+        transform: rotate(var(--v3))
+}
+100% {    left:var(--x1);
+        top:var(--y1);
+        transform: rotate(var(--v1))
+}
+}
+
+@keyframes name {
+0% {    
+        left:var(--x1);
+        top:var(--y1);
+}
+20% {   
+        left:var(--x2);
+        top:var(--y2);
+}
+25% {   
+        left:var(--x2);
+        top:var(--y2);
+}
+50%{   
+        left:var(--x3);
+        top:var(--y3);
+}
+55%{   
+        left:var(--x3);
+        top:var(--y3);
+}
+95% {    
+        left:var(--x1);
+        top:var(--y1);
+}
+100% {    
+        left:var(--x1);
+        top:var(--y1);
+}
+}
+
+
+/* .container{
+       
+    width:90vw;
+    height:90vh;
+    position:relative;
+    left:5%;
+    top:5%;
+    border: rebeccapurple solid;
+
+} */
