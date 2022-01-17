@@ -1,0 +1,4 @@
+.openmapwrap {
+  display: flex;
+  flex-direction: row;
+}
