@@ -1,0 +1,10 @@
+.containerSteps{
+       
+    width:90vw;
+    height:90vh;
+    position:relative;
+    left:5%;
+    top:5%;
+    border: rebeccapurple solid;
+
+}
