@@ -1,3 +1,8 @@
+body {
+  cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+  font-family: "IM Fell English", "Lucida Handwriting", cursive;
+}
+
 .intro {
   display: flex;
   flex-direction: column;
@@ -105,4 +110,12 @@
 .sectionWrap {
   padding: 10px;
   overflow: hidden;
+}
+.containerSteps {
+  width: 90vw;
+  height: 90vh;
+  position: relative;
+  left: 5%;
+  top: 5%;
+  border: rebeccapurple solid;
 }
