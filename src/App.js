@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import axios from "axios";
+// import axios from "axios";
 // import Character from "./Character";
 import Characters from "./Characters";
 import FootSteps from "./FootSteps";
@@ -33,7 +33,7 @@ function App() {
       <Map />
       <FootSteps char={characters} />
       <Characters char={characters} />
-      <MongoCharacters/>
+      <MongoCharacters />
     </div>
   );
 }

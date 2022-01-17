@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
-import Alt_App from "./Alt_App"
+import AltApp from "./AltApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Alt_App />
+    <AltApp />
   </React.StrictMode>,
   document.getElementById("root")
 );
