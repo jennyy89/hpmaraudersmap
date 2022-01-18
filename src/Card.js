@@ -13,24 +13,23 @@ export default function Tarjeta({
   edit,
   info,
   newPut,
-  addHandler
+  addHandler,
 }) {
   const [isEdit, setIsEdit] = useState(false);
   const [put, setPut] = useState(character);
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newObj = {...put}
-    newObj._id=""
-    console.log(newObj)
-    !Object.values(newObj).every(x => x === null || x === " ") ? 
-      edit(character._id, put) : 
-      console.log("empty")
+    const newObj = { ...put };
+    newObj._id = "";
+    console.log(newObj);
+    !Object.values(newObj).every((x) => x === null || x === " ")
+      ? edit(character._id, put)
+      : console.log("empty");
   };
   const handleInput = (e, property) => {
-    console.log(put)
-    const newObj = {...put};
+    console.log(put);
+    const newObj = { ...put };
     newObj[property] = e.target.value || character[property];
     setPut(newObj);
   };
@@ -60,7 +59,7 @@ export default function Tarjeta({
                   <br />
                 </div>
               ))}
-              <button >Edit Now</button>
+              {/* <button >Edit Now</button> */}
             </form>
           )}
         </div>
@@ -80,7 +79,7 @@ export default function Tarjeta({
           }}
           onClick={() => {
             handleDelete(character._id);
-            addHandler()
+            addHandler();
           }}
         >
           Expel

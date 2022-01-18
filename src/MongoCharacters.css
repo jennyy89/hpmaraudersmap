@@ -1,22 +1,20 @@
-
 .btn {
-    border: none;
-    padding-bottom:10px;
-    width: 190px;
-    height: 50px;
-    background-image: url('./img/scroll.svg');    
-    background-size: cover;
-    background-position: 0% 55%;
-    cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
-    font: 16px Satisfy, cursive;
-
+  border: none;
+  padding-bottom: 10px;
+  width: 190px;
+  height: 50px;
+  background-image: url("./img/scroll.svg");
+  background-size: cover;
+  background-position: 0% 55%;
+  cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+  font: 16px Satisfy, cursive;
 }
-.char_Container{
-    background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg"); 
-
-    text-align: center;
-    /* border: black solid; */
-    padding: 10px;
-    font: 16px Satisfy, cursive;
-
+.char_Container {
+  background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg");
+  max-height: 68vh;
+  width: 20vw;
+  text-align: center;
+  /* border: black solid; */
+  padding: 10px;
+  font: 16px Satisfy, cursive;
 }

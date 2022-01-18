@@ -1,74 +1,15 @@
 body {
   cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
-  /* 
-  background: url("https://img00.deviantart.net/5088/i/2013/171/5/5/the_back_of_the_marauders_map_by_littlefallingstar-d69tz1k.jpg"); */
+  background: url("https://www.sideshow.com/storage/product-images/909612/harry-potter-hogwarts-castle-wallpaper-mural_harry-potter_silo.png");
+  background-size: cover;
   /* background-color: rgba(0, 0, 0, 1); */
   font-family: "IM Fell English", "Lucida Handwriting", cursive;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .headline {
   color: #73594d;
 }
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-  -webkit-perspective: 2000px;
-  padding: 5%;
-  perspective: 2000px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* .left,
-.middle,
-.right {
-  float: left;
-  position: relative;
-  height: 100%;
-  width: 100%;
-}
-
-.left {
-  z-index: 20;
-  transform: rotateY(180deg);
-  transform-origin: 100% 50%;
-}
-.right {
-  transform: rotateY(-180deg);
-  transform-origin: 0% 50%;
-}
-
-.front,
-.back {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: #47484a;
-  top: 0;
-}
-.front {
-  transform: rotateY(180deg);
-  z-index: 5;
-}
-
-.back {
-  background-color: #47484a;
-  z-index: 4;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-
-  &.open {
-    z-index: 10;
-  }
-} */
 
 .openB {
   background-color: transparent;
@@ -83,42 +24,11 @@ body {
   opacity: 0.7;
   transition: 0.2s ease-in-out;
   cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+  margin-bottom: 40px;
 }
 
 .openB:hover {
   background-color: #ebe2a7;
   color: black;
   transition: 0.2s ease-in-out;
-}
-
-.preview {
-  max-height: 100px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  content: "";
-  position: relative;
-  display: block;
-}
-
-.preview:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: linear-gradient(transparent, white);
-}
-
-.sectionWrap {
-  padding: 10px;
-  overflow: hidden;
-}
-.containerSteps {
-  width: 90vw;
-  height: 90vh;
-  position: relative;
-  left: 5%;
-  top: 5%;
-  border: purple solid;
 }
