@@ -43,7 +43,7 @@ function AltApp() {
         <button className="openB" onClick={openMap}>
           Open/Close Map
         </button>
-        {true ? <OpenMap /> : <ClosedMap />}
+        {isOpen ? <OpenMap /> : <ClosedMap />}
 
         {/* </section> */}
       </div>
