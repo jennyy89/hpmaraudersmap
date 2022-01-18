@@ -1,10 +1,9 @@
-import React from "react";
+import {memo} from 'react'
 
 import "./Steps.css";
 import footsteps from "./img/footsteps.png";
 
-export default function Steps({ person, handleDisplay, index }) {
-  console.log(Steps.prpos);
+const  Steps = memo( ({person, index, handleDisplay}) => {
   const scaling = 65;
   const RandomNum = () => {
     return Math.floor(Math.random() * scaling);
@@ -43,7 +42,6 @@ export default function Steps({ person, handleDisplay, index }) {
   };
   return (
     <>
-      {/* <div className='container' > */}
       <img
         className="footSteps"
         src={footsteps}
@@ -54,13 +52,15 @@ export default function Steps({ person, handleDisplay, index }) {
       <div
         className="nameTag"
         style={CSSVar}
-        onClick={() => {
-          handleDisplay(index);
-        }}
+        onClick={
+          handleDisplay[index]
+        }
       >
         {person.name}
       </div>
-      {/* </div>   */}
     </>
   );
 }
+)
+
+export default Steps

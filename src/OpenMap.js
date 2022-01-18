@@ -3,30 +3,49 @@ import "./OpenMap.css";
 import Footsteps from "./Steps";
 import useMongo from "./useMongo";
 import Card2 from "./Card2";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import MongoCharacters from "./MongoCharacters";
+import Card from "./Card";
 
 export default function OpenMap() {
-  const { people, totalPeeps, load, add, del, edit } = useMongo();
-  const [isClicked, setIsClicked] = useState([false]);
+const { people, totalPeeps, load, add, del, edit } = useMongo();
+const [isClicked, setIsClicked] = useState([false]);
+const [isAdd,setIsAdd] = useState(false);
 
-  useEffect(() => {
-    load();
-  }, []);
-  useEffect(() => {
+const info = ['name','image','ancestry','house','dateOfBirth'];
+const newPut = {name:'',image:'',ancestry:'',house:'',dateOfBirth:''};
+
+useEffect(() => {
+  load();
+}, [,isAdd]);
+useEffect(() => {
+  const newArray = new Array(totalPeeps).fill(false);
+  setIsClicked(newArray);
+}, [totalPeeps]);
+
+const handlerCreator = (index) => {
+  return (
+      () => {
+      const newArray = new Array(totalPeeps).fill(false);
+      newArray[index]=true;
+      setIsClicked(newArray);
+  })}
+const preDisplay = new Array(totalPeeps)
+    for (let i = 0; i < 15 ; i++) 
+    {preDisplay[i]=useCallback(handlerCreator(i),[])}
+const handleDisplay = useCallback(preDisplay,[])
+
+const handleClose = useCallback(
+  (index) => {
+    console.log("Dentro Close")
     const newArray = new Array(totalPeeps).fill(false);
     setIsClicked(newArray);
-  }, [totalPeeps]);
+  },[  ])
 
-  const handleDisplay = (index) => {
-    setIsClicked(
-      isClicked.map((value, counter) => (counter === index ? !value : false))
-    );
-  };
-
-  const handleDelete = () => {};
-  const info = [1, 2, 3];
-  const newPut = [1, 2, 3];
+  const addHandler = () => {
+    setIsAdd(!isAdd)
+  }
+  
   return (
     <div className="openmapwrap">
       <div className="map-side front sectionWap">
@@ -35,13 +54,13 @@ export default function OpenMap() {
           alt=""
         />
       </div>
-       <div className="map-side front sectionWap">
+      <div className="map-side front sectionWap">
           <img
             src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/7.png"
             alt=""
           />
         </div>
-      </div>{/* <div className="right"> */}
+       {/* <div className="right">  */}
       <div className="map-side front sectionWap">
         <img
           src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/8.png"
@@ -74,21 +93,25 @@ export default function OpenMap() {
         />
       </div>
 
-      {people.map((person, index) => {
+      {totalPeeps &&
+      people.map((person,index) => {
         return (
           <Footsteps
             person={person}
-            handleDisplay={handleDisplay}
-            index={index}
             key={index}
+            index={index}
+            handleDisplay={handleDisplay}
+            isAdd={isAdd}
           />
         );
-      })}
+      })
+      }
+
       {isClicked.map((value, index) => {
         return (
           value && (
             <Card2
-              handleDisplay={handleDisplay}
+              handleDisplay={handleClose}
               character={people[index]}
               index={index}
               handleDelete={del}
@@ -100,7 +123,34 @@ export default function OpenMap() {
           )
         );
       })}
-      <MongoCharacters />
+      <MongoCharacters  addHandler={addHandler} />
     </div>
   );
 }
+
+// Please Dont erase yet
+// const Dis0 = useCallback(
+//   () => {
+//     console.log('adentro de Dis1')
+
+//   const newArray = new Array(totalPeeps).fill(false);
+//   newArray[0]=true;
+//   setIsClicked(newArray);
+//   },[ ])
+//   const Dis1 = useCallback(
+//     () => {
+//     const newArray = new Array(totalPeeps).fill(false);
+//     newArray[1]=true;
+//     setIsClicked(newArray);
+//     },[ ])
+//  const handleDisplay = useCallback(
+//   (index) => {
+//   const array= isClicked.map((value, counter) => (counter === index ? !value : false))
+//   setIsClicked(array);
+//   },[ isClicked ])
+// Version of handlerCreator with map that forsome weird reason doesnt work.
+// const handler = (index) => {
+//     const array= isClicked.map((value, counter) => (counter === index ? !value : false))
+//     setIsClicked(array);
+//     }
+//const arrayHandler = [useCallback( handler,[isClicked]), handler]
