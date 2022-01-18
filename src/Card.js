@@ -13,48 +13,54 @@ export default function Tarjeta({
   edit,
   info,
   newPut,
+  addHandler
 }) {
   const [isEdit, setIsEdit] = useState(false);
-  const [put, setPut] = useState(newPut);
+  const [put, setPut] = useState(character);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    edit(character._id, put);
-    setPut(newPut);
+    const newObj = {...put}
+    newObj._id=""
+    console.log(newObj)
+    !Object.values(newObj).every(x => x === null || x === " ") ? 
+      edit(character._id, put) : 
+      console.log("empty")
   };
   const handleInput = (e, property) => {
-    const newObj = { ...put };
-    newObj[property] = e.target.value;
+    console.log(put)
+    const newObj = {...put};
+    newObj[property] = e.target.value || character[property];
     setPut(newObj);
   };
-
   return (
     <Card sx={{ maxWidth: 340, mx: "auto", my: 4 }} className="card">
       <CardContent>
         <div className="characterContainer">
           <img src={logo} className="logo" alt="" />
-          <h2> {character.name} </h2>
-          <h3>{character.house} </h3>
+          <h2> {put.name || character.name} </h2>
+          <h3>{put.house || character.house} </h3>
           <img src={character.image} width="200" alt="" />
-          <h4>DoB: {character.dateOfBirth} </h4>
-          <h4>Ancestry: {character.ancestry} </h4>
+          <h4>DoB: {put.dateOfBirth || character.dateOfBirth} </h4>
+          <h4>Ancestry: {put.ancestry || character.ancestry} </h4>
           {/* <button onClick={() => {handleDelete(character._id,index)}} >
                     Expel Student
                 </button> */}
           {isEdit && (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => handleSubmit(e)}>
               {info.map((property, index) => (
                 <div key={index}>
                   <input
                     type="text"
-                    placeholder={property}
+                    placeholder={character[property]}
                     onChange={(e) => handleInput(e, property)}
-                    value={put.property}
+                    value={character.property}
                   />
                   <br />
                 </div>
               ))}
-              <button>submit</button>
+              <button >Edit Now</button>
             </form>
           )}
         </div>
@@ -74,6 +80,7 @@ export default function Tarjeta({
           }}
           onClick={() => {
             handleDelete(character._id);
+            addHandler()
           }}
         >
           Expel

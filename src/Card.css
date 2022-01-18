@@ -10,3 +10,7 @@
     cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
     color: #0ba10b
 }
+
+button{
+    background: url('./img/scroll.svg');
+}
