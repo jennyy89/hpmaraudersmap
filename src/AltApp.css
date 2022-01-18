@@ -22,7 +22,7 @@ body {
   padding: 5px;
   min-width: 120px;
   max-width: 150px;
-  z-index: 50;
+  z-index: 0;
   bottom: 30px;
   font-weight: 400;
   font-size: 1em;

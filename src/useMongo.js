@@ -40,7 +40,6 @@ function edit (id, put) {
         body: JSON.stringify({name:put.name,image:put.image,ancestry:put.ancestry,house:put.house,dateOfBirth:put.dateOfBirth})
     })
     .then((result) => {
-        console.log("estoy en edit", result)
         load()});
 }
 

@@ -4,7 +4,7 @@ import useMongo from './useMongo';
 import Card from './Card';
 
 
-export default function MongoCharacters() {
+export default function MongoCharacters({addHandler}) {
     
 const info = ['name','image','ancestry','house','dateOfBirth'];
 const newPost = {name:'',image:'',ancestry:'',house:'',dateOfBirth:''};
@@ -26,6 +26,7 @@ const handleSubmit = (e) => {
     e.preventDefault();
     add(post);
     setPost(newPost);
+    addHandler()
 }
 const handleDisplay = (index) => {
     setIsClicked(isClicked.map((value, counter )=>(counter === index ? !value : value)))
@@ -42,11 +43,23 @@ return (
     {people.map((person,index) => (
         <div  key={person._id}>
         <button className="btn" onClick={() => {handleDisplay(index)}}>{person.name}</button>
-        {isClicked[index] &&  <Card character={person} index={index} handleDelete={del} edit={edit} info={info} newPut={newPost}/>}
+        {isClicked[index] &&  
+        <Card 
+            character={person} 
+            index={index} 
+            handleDelete={del} 
+            edit={edit} 
+            info={info} 
+            newPut={newPost}
+            key={index}
+            addHandler={addHandler}
+            />}
         </div>
     ))}
     <br/>
-    <button  onClick={() => {handleDisplay(totalPeeps)}}>Enroll New Student</button> 
+    <br/>
+    <br/>
+    <button className="btn" onClick={() => {handleDisplay(totalPeeps)}}>Enroll Student</button> 
     {isClicked[totalPeeps] &&  <form onSubmit={handleSubmit}>
         {info.map((property, index) =>(
             <div key={index}>
