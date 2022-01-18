@@ -2,16 +2,17 @@ import { useState, useEffect } from "react";
 import "./MongoCharacters.css";
 import useMongo from "./useMongo";
 import Card from "./Card";
+import Card2 from "./Card2";
 
 export default function MongoCharacters({ addHandler }) {
-  const info = ["name", "image", "ancestry", "house", "dateOfBirth"];
-  const newPost = {
-    name: "",
-    image: "",
-    ancestry: "",
-    house: "",
-    dateOfBirth: "",
-  };
+const info = ["name", "image", "ancestry", "house", "dateOfBirth"];
+const newPost = {
+  name: "",
+  image: "",
+  ancestry: "",
+  house: "",
+  dateOfBirth: "",
+};
 
   const { people, totalPeeps, load, add, del, edit } = useMongo();
   const [isClicked, setIsClicked] = useState(false);
@@ -44,7 +45,10 @@ export default function MongoCharacters({ addHandler }) {
     newObj[property] = e.target.value;
     setPost(newObj);
   };
-
+  const handleClose = (index) => {
+    const newArray = new Array(totalPeeps).fill(false);
+    setIsClicked(newArray);
+    };
   return (
     <div className="char_Container">
       <h2>Staff & Students</h2>
@@ -59,7 +63,7 @@ export default function MongoCharacters({ addHandler }) {
             {person.name}
           </button>
           {isClicked[index] && (
-            <Card
+            <Card2
               character={person}
               index={index}
               handleDelete={del}
@@ -68,6 +72,8 @@ export default function MongoCharacters({ addHandler }) {
               newPut={newPost}
               key={index}
               addHandler={addHandler}
+              handleDisplay={handleClose}
+
             />
           )}
         </div>
@@ -86,15 +92,13 @@ export default function MongoCharacters({ addHandler }) {
       {isClicked[totalPeeps] && (
         <form onSubmit={handleSubmit}>
           {info.map((property, index) => (
-            <div key={index}>
               <input
                 type="text"
                 placeholder={property}
                 onChange={(e) => handleInput(e, property)}
                 value={post.property}
+                key={index}
               />
-              <br />
-            </div>
           ))}
           <button>submit</button>
         </form>

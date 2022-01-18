@@ -38,29 +38,25 @@ export default function OpenMap() {
       setIsClicked(newArray);
     };
   };
-  // const preDisplay = new Array(totalPeeps);
-  // for (let i = 0; i < 15; i++) {
-  //   preDisplay[i] = useCallback(handlerCreator(i), []);
-  // }
-  // const handleDisplay = useCallback(preDisplay, []);
 
   const preDisplay = new Array(totalPeeps);
   for (let i = 0; i < 15; i++) {
     preDisplay[i] = handlerCreator(i);
-  }
+    }
   const handleDisplay = useCallback(preDisplay, []);
 
   const handleClose = useCallback((index) => {
-    console.log("Dentro Close");
     const newArray = new Array(totalPeeps).fill(false);
     setIsClicked(newArray);
-  }, []);
+    }, []);
 
   const addHandler = () => {
     setIsAdd(!isAdd);
   };
 
   return (
+    <>
+    
     <div className="containerSteps openmapwrap">
       <img
         className="img_card"
@@ -126,8 +122,12 @@ export default function OpenMap() {
           )
         );
       })}
-      <MongoCharacters addHandler={addHandler} />
+    <MongoCharacters addHandler={addHandler} />
+
     </div>
+    
+    </>
+
   );
 }
 
@@ -157,3 +157,8 @@ export default function OpenMap() {
 //     setIsClicked(array);
 //     }
 //const arrayHandler = [useCallback( handler,[isClicked]), handler]
+ // const preDisplay = new Array(totalPeeps);
+  // for (let i = 0; i < 15; i++) {
+  //   preDisplay[i] = useCallback(handlerCreator(i), []);
+  // }
+  // const handleDisplay = useCallback(preDisplay, []);

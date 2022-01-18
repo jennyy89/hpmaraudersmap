@@ -16,9 +16,6 @@ export default function ClosedMap({ style }) {
           style={style.styleright}
         />
       </div>
-      {/* </div>
-        </div>
-      </div> */}
     </>
   );
 }

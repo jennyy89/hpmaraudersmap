@@ -50,10 +50,10 @@ export default function Tarjeta({
             </IconButton>
           }
         />
-        <CardContent>
+        <CardContent sx={{ padding: '1px',marginTop:'-50px' }}>
+          <img src={logo} className="logo2" alt="" />
           <div className="characterContainer">
-            <img src={logo} className="logo2" alt="" />
-            <h3> {put.name || character.name} </h3>
+            <h2> {put.name || character.name} </h2>
             <h4>{put.house || character.house} </h4>
             <img src={character.image} width="200" alt="" />
             <h4>DoB: {put.dateOfBirth || character.dateOfBirth} </h4>
@@ -80,7 +80,7 @@ export default function Tarjeta({
           </div>
         </CardContent>
         <CardActions
-          style={{ justifyContent: "center", mb: 6, mx: "auto" }}
+          style={{ justifyContent: "center", marginBottom:'5px', mx: "auto" }}
           className="cardActions"
         >
           <Button

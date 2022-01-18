@@ -4,22 +4,6 @@ import OpenMap from "./OpenMap";
 import { useState } from "react";
 
 function AltApp() {
-  // ========= Elephant Api  =======
-  // const apiData = "http://localhost:3007/api/characters";
-  // const [characters, setCharacters] = useState([]);
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  // const getData = async () => {
-  //   try {
-  //     const results = await axios.get(apiData);
-  //     setCharacters(results.data);
-  //     console.log(results.data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
   const delay = 1500;
 
@@ -36,7 +20,6 @@ function AltApp() {
       setTimeout(() => {
         setIsMapvisible(true);
       }, delay);
-      console.log(isOpen);
     }
   };
 
@@ -50,20 +33,19 @@ function AltApp() {
     transition: !isOpen ? "all 0s ease-out" : "all 2s ease-in-out",
   };
 
-  return (
-    <>
-      <h1 className="headline">Welcome to the Harry Potter World</h1>
-      <button className="openB" onClick={openMap}>
-        Open/Close Map
-      </button>
+return (
+  <>
+    <h1 className="headline">Welcome to the Harry Potter World</h1>
+    <button className="openB" onClick={openMap}>
+      {isMapvisible?`Close`:`Open`} Map
+    </button>
 
-      {isMapvisible ? (
-        <OpenMap />
-      ) : (
-        <ClosedMap style={{ styleleft, styleright }} />
-      )}
-    </>
-  );
+    {isMapvisible ? 
+      <OpenMap /> : 
+      <ClosedMap style={{ styleleft, styleright }} />
+    }
+  </>
+);
 }
 
 export default AltApp;
