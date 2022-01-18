@@ -1,28 +1,31 @@
-.card2{
-    z-index:1;
-    position:static;
-     left:0%;
-    top:0%; 
-    background-size: cover;
-    background-image: url("https://i.pinimg.com/originals/20/e9/5a/20e95a861ec908f8eef9711bc9200a72.jpg");
-    background-position: center;
-    text-align: center;
+.card2 {
+  z-index: 1;
+  position: static;
+  left: 0%;
+  top: 0%;
+  background-size: cover;
+  background-image: url("https://i.pinimg.com/originals/20/e9/5a/20e95a861ec908f8eef9711bc9200a72.jpg");
+  background-position: center;
+  text-align: center;
 }
 
-.cardContainer{
-    position: fixed;
-     bottom: 0;
-    /* right: 0;  */
-    width: 120vw;
-    height: 100vh;
-    background-color: rgba(45, 54, 57, 0.5);  
+.cardContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* right: 0;  */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(45, 54, 57, 0.5);
 }
 
-.logo2{ width: 100px;
-    position:relative;
-    top:-40px;}
+.logo2 {
+  width: 100px;
+  position: relative;
+  top: -40px;
+}
 
 .cardActions {
-    cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
-    color: #0ba10b
+  cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
+  color: #0ba10b;
 }

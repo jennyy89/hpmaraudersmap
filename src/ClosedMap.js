@@ -1,5 +1,4 @@
 import React from "react";
-import "./ClosedMap.css";
 
 export default function ClosedMap({ style }) {
   return (

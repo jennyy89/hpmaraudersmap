@@ -7,22 +7,26 @@
   transition: 1s ease-in-out;
 }
 
-.openmapwrap.img_trans:hover {
+/* .openmapwrap.img_trans:hover {
   -webkit-transform: translate(3em, 0);
   -moz-transform: translate(3em, 0);
   -o-transform: translate(3em, 0);
   -ms-transform: translate(3em, 0);
   transform: translate(3em, 0);
-}
+} */
 
 .containerSteps {
-  width: 90vw;
+  width: 100vm;
   position: relative;
   left: 5%;
   top: 5%;
 }
 
-img {
+.img_card {
+  height: 70vh;
+}
+
+/* img {
   background-position: top 150px left 120px, 110px 90px;
   animation-name: transition;
   animation-duration: 5s;
@@ -40,4 +44,4 @@ img {
   100% {
     background-position: top 150px left 120px, 615px 90px;
   }
-}
+} */

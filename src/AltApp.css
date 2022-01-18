@@ -4,12 +4,7 @@ body {
   background-size: cover;
   /* background-color: rgba(0, 0, 0, 1); */
   font-family: "IM Fell English", "Lucida Handwriting", cursive;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .headline {
@@ -36,24 +31,4 @@ body {
   background-color: #ebe2a7;
   color: black;
   transition: 0.2s ease-in-out;
-}
-
-img {
-  animation-name: transition;
-  animation-duration: 2s;
-  transition: all 2s ease-in-out;
-}
-
-@keyframes transition {
-  0% {
-    background-position: top 150px left 120px, 110px 90px;
-  }
-
-  50% {
-    background-position: top 150px left 100px, 362px 90px; /* Die Fische werden um die Häfte der Breite der fische.png-Grafik verschoben */
-  }
-
-  100% {
-    background-position: top 150px left 120px, 615px 90px; /* Die Fische werden um die volle Breite der fische.png-Grafik verschoben */
-  }
 }

@@ -5,7 +5,6 @@ import useMongo from "./useMongo";
 import Card2 from "./Card2";
 import { useEffect, useState, useCallback } from "react";
 import MongoCharacters from "./MongoCharacters";
-import Card from "./Card";
 
 export default function OpenMap() {
   const { people, totalPeeps, load, add, del, edit } = useMongo();
@@ -23,7 +22,10 @@ export default function OpenMap() {
 
   useEffect(() => {
     load();
-  }, [, isAdd]);
+  }, []);
+  useEffect(() => {
+    load();
+  }, [isAdd]);
   useEffect(() => {
     const newArray = new Array(totalPeeps).fill(false);
     setIsClicked(newArray);
@@ -36,9 +38,15 @@ export default function OpenMap() {
       setIsClicked(newArray);
     };
   };
+  // const preDisplay = new Array(totalPeeps);
+  // for (let i = 0; i < 15; i++) {
+  //   preDisplay[i] = useCallback(handlerCreator(i), []);
+  // }
+  // const handleDisplay = useCallback(preDisplay, []);
+
   const preDisplay = new Array(totalPeeps);
   for (let i = 0; i < 15; i++) {
-    preDisplay[i] = useCallback(handlerCreator(i), []);
+    preDisplay[i] = handlerCreator(i);
   }
   const handleDisplay = useCallback(preDisplay, []);
 
@@ -53,32 +61,39 @@ export default function OpenMap() {
   };
 
   return (
-    <div className="img_trans containerSteps openmapwrap">
+    <div className="containerSteps openmapwrap">
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/6.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/7.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/8.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/9.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/18.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/10.png"
         alt=""
       />
       <img
+        className="img_card"
         src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/11.png"
         alt=""
       />

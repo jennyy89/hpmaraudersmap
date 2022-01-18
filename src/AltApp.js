@@ -51,20 +51,18 @@ function AltApp() {
   };
 
   return (
-    <div className="backgr">
-      <div className="intro">
-        <h1 className="headline">Welcome to the Harry Potter World</h1>
-        <button className="openB" onClick={openMap}>
-          Open/Close Map
-        </button>
+    <>
+      <h1 className="headline">Welcome to the Harry Potter World</h1>
+      <button className="openB" onClick={openMap}>
+        Open/Close Map
+      </button>
 
-        {isMapvisible ? (
-          <OpenMap />
-        ) : (
-          <ClosedMap style={{ styleleft, styleright }} />
-        )}
-      </div>
-    </div>
+      {isMapvisible ? (
+        <OpenMap />
+      ) : (
+        <ClosedMap style={{ styleleft, styleright }} />
+      )}
+    </>
   );
 }
 
