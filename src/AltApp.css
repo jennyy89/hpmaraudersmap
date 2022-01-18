@@ -5,10 +5,12 @@ body {
   /* background-color: rgba(0, 0, 0, 1); */
   font-family: "IM Fell English", "Lucida Handwriting", cursive;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .headline {
   color: #73594d;
+
 }
 
 .openB {

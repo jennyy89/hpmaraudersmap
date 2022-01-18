@@ -18,14 +18,20 @@
   height: 100%;
   background-color: rgba(45, 54, 57, 0.5);
 }
+.cardContainer h2,.cardContainer h3,.cardContainer h4 {
+  margin: 0;
+  padding:.2em;
+}
 
 .logo2 {
   width: 100px;
   position: relative;
-  top: -40px;
 }
 
 .cardActions {
   cursor: url(http://imageshack.com/a/img922/6285/gC18h6.png), auto;
   color: #0ba10b;
+}
+button{
+  background: url('./img/scroll.svg');
 }
