@@ -1,0 +1,19 @@
+img {
+  background-position: top 150px left 120px, 110px 90px;
+  animation-name: transition;
+  animation-duration: 5s;
+}
+
+@keyframes transition {
+  0% {
+    background-position: top 150px left 120px, 110px 90px;
+  }
+
+  50% {
+    background-position: top 150px left 100px, 362px 90px; /* Die Fische werden um die Häfte der Breite der fische.png-Grafik verschoben */
+  }
+
+  100% {
+    background-position: top 150px left 120px, 615px 90px; /* Die Fische werden um die volle Breite der fische.png-Grafik verschoben */
+  }
+}

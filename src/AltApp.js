@@ -1,5 +1,4 @@
 import "./AltApp.css";
-// import App from "./App";
 import ClosedMap from "./ClosedMap";
 import OpenMap from "./OpenMap";
 import { useState } from "react";
@@ -22,30 +21,48 @@ function AltApp() {
   //   }
   // };
 
+  const delay = 1500;
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isMapvisible, setIsMapvisible] = useState(false);
+
   const openMap = () => {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
-    console.log(isOpen);
+    if (isOpen) {
+      setIsOpen(false);
+      setIsMapvisible(false);
+    } else {
+      setIsOpen(true);
+      setTimeout(() => {
+        setIsMapvisible(true);
+      }, delay);
+      console.log(isOpen);
+    }
   };
 
-  // function toggleMap() {
-  //   setIsOpen(isOpen);
-  // }
+  const styleleft = {
+    transform: !isOpen ? "skewY(0deg)" : "skewY(25deg)",
+    transition: !isOpen ? "all 0s ease-out" : "all 2s ease-in-out",
+  };
+
+  const styleright = {
+    transform: !isOpen ? "skewY(0deg)" : "skewY(-16deg)",
+    transition: !isOpen ? "all 0s ease-out" : "all 2s ease-in-out",
+  };
+
   return (
     <div className="backgr">
       <div className="intro">
         <h1 className="headline">Welcome to the Harry Potter World</h1>
-        {/* 
-    <div className="main-content" onClick={toggleMap}>
-      <div className={isOpen ? "map-base active" : "map-base"}></div>
-    </div> */}
-        {/* <section className={isOpen ? "map-base active" : "map-base"}> */}
         <button className="openB" onClick={openMap}>
           Open/Close Map
         </button>
-        {isOpen ? <OpenMap /> : <ClosedMap />}
 
-        {/* </section> */}
+        {isMapvisible ? (
+          <OpenMap />
+        ) : (
+          <ClosedMap style={{ styleleft, styleright }} />
+        )}
       </div>
     </div>
   );

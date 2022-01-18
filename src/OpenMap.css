@@ -1,4 +1,43 @@
 .openmapwrap {
   display: flex;
   flex-direction: row;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.openmapwrap.img_trans:hover {
+  -webkit-transform: translate(3em, 0);
+  -moz-transform: translate(3em, 0);
+  -o-transform: translate(3em, 0);
+  -ms-transform: translate(3em, 0);
+  transform: translate(3em, 0);
+}
+
+.containerSteps {
+  width: 90vw;
+  position: relative;
+  left: 5%;
+  top: 5%;
+}
+
+img {
+  background-position: top 150px left 120px, 110px 90px;
+  animation-name: transition;
+  animation-duration: 5s;
+}
+
+@keyframes transition {
+  0% {
+    background-position: top 150px left 120px, 110px 90px;
+  }
+
+  50% {
+    background-position: top 150px left 100px, 362px 90px;
+  }
+
+  100% {
+    background-position: top 150px left 120px, 615px 90px;
+  }
 }
