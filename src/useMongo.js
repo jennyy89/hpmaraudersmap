@@ -2,7 +2,8 @@ import { useState} from "react";
 
 function useMongo  () {
 
-const url= "http://localhost:3007/apiMDB/characters"
+// const url= "http://localhost:3007/apiMDB/characters"
+const url = "https://hp-map-project.herokuapp.com/apiMDB/characters"
 
 const [people, setPeople]=useState([])
 const [totalPeeps, setTotalPeeps ] = useState(0)
