@@ -11,27 +11,25 @@ import CloseIcon from "@mui/icons-material/Close";
 
 export default function Tarjeta({
   character,
-  index,
   handleDelete,
   edit,
-  info,
-  newPut,
   handleDisplay,
 }) {
   const [isEdit, setIsEdit] = useState(false);
   const [put, setPut] = useState(useState(character));
+  const info = ["name", "image", "ancestry", "house", "dateOfBirth"];
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newObj = { ...put };
     newObj._id = "";
-    console.log(newObj);
     !Object.values(newObj).every((x) => x === null || x === " ")
       ? edit(character._id, put)
-      : console.log("empty");
+      : alert("empty");
+    setIsEdit(!isEdit)
   };
   const handleInput = (e, property) => {
-    console.log(put);
     const newObj = { ...put };
     newObj[property] = e.target.value || character[property];
     setPut(newObj);
@@ -41,12 +39,8 @@ export default function Tarjeta({
       <Card sx={{ maxWidth: 340, mx: "auto", my: 4 }} className="card2">
         <CardHeader
           action={
-            <IconButton>
-              <CloseIcon
-                onClick={() => {
-                  handleDisplay(index);
-                }}
-              />
+            <IconButton onClick={() => {handleDisplay();}}>
+              <CloseIcon/>
             </IconButton>
           }
         />
@@ -67,14 +61,10 @@ export default function Tarjeta({
                       placeholder={character[property]}
                       onChange={(e) => handleInput(e, property)}
                       value={character.property}
-                      // type="text"
-                      // placeholder={property}
-                      // onChange={(e) => handleInput(e,property) }
-                      // value={put.property}
                     />
                   </div>
                 ))}
-                <button>submit</button>
+                <button>Add Changes</button>
               </form>
             )}
           </div>
@@ -98,7 +88,7 @@ export default function Tarjeta({
           >
             Expel
           </Button>
-          <Button
+          {!isEdit && <Button
             style={{
               color: "#0ba10b ",
               fontWeight: "bold",
@@ -111,9 +101,8 @@ export default function Tarjeta({
               setIsEdit(!isEdit);
             }}
           >
-            {/* edit(character._id) */}
             Edit
-          </Button>
+          </Button>}
         </CardActions>
       </Card>
     </div>

@@ -1,31 +1,22 @@
-import React from "react";
-import "./OpenMap.css";
-import Footsteps from "./Steps";
-import useMongo from "./useMongo";
-import Card2 from "./Card2";
 import { useEffect, useState, useCallback } from "react";
+import useMongo from "./useMongo";
+
+import Footsteps from "./Steps";
+import Card2 from "./Card2";
 import MongoCharacters from "./MongoCharacters";
+import RenderOpenMap from "./RenderOpenMap";
+
+import "./OpenMap.css";
 
 export default function OpenMap() {
-  const { people, totalPeeps, load, add, del, edit } = useMongo();
+  const { people, totalPeeps, load, del, edit } = useMongo();
   const [isClicked, setIsClicked] = useState([false]);
   const [isAdd, setIsAdd] = useState(false);
 
-  const info = ["name", "image", "ancestry", "house", "dateOfBirth"];
-  const newPut = {
-    name: "",
-    image: "",
-    ancestry: "",
-    house: "",
-    dateOfBirth: "",
-  };
-
   useEffect(() => {
     load();
-  }, []);
-  useEffect(() => {
-    load();
-  }, [isAdd]);
+  }, [,isAdd]);
+  
   useEffect(() => {
     const newArray = new Array(totalPeeps).fill(false);
     setIsClicked(newArray);
@@ -33,19 +24,12 @@ export default function OpenMap() {
 
   const handlerCreator = (index) => {
     return () => {
-      const newArray = new Array(totalPeeps).fill(false);
-      newArray[index] = true;
-      setIsClicked(newArray);
-    };
-  };
-
-  const preDisplay = new Array(totalPeeps);
-  for (let i = 0; i < 15; i++) {
-    preDisplay[i] = handlerCreator(i);
-    }
-  const handleDisplay = useCallback(preDisplay, []);
-
-  const handleClose = useCallback((index) => {
+        setIsClicked(people.map((x, iterator)=> iterator === index ? true : false ));
+    }};
+  const preDisplay = people.map( (x,index)=> handlerCreator(index) );
+  const handleDisplay= useCallback(preDisplay, [people]);
+  
+  const handleClose = useCallback(() => {
     const newArray = new Array(totalPeeps).fill(false);
     setIsClicked(newArray);
     }, []);
@@ -55,45 +39,11 @@ export default function OpenMap() {
   };
 
   return (
-    <>
-    
     <div className="containerSteps openmapwrap">
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/6.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/7.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/8.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/9.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/18.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/10.png"
-        alt=""
-      />
-      <img
-        className="img_card"
-        src="https://meowlivia.s3.us-east-2.amazonaws.com/codepen/map/11.png"
-        alt=""
-      />
-      {totalPeeps &&
+      
+      <RenderOpenMap />
+
+      { totalPeeps &&
         people.map((person, index) => {
           return (
             <Footsteps
@@ -106,7 +56,7 @@ export default function OpenMap() {
           );
         })}
 
-      {isClicked.map((value, index) => {
+      { isClicked.map((value, index) => {
         return (
           value && (
             <Card2
@@ -115,19 +65,13 @@ export default function OpenMap() {
               index={index}
               handleDelete={del}
               edit={edit}
-              info={info}
-              newPut={newPut}
               key={index}
             />
           )
         );
       })}
     <MongoCharacters addHandler={addHandler} />
-
     </div>
-    
-    </>
-
   );
 }
 
@@ -162,3 +106,19 @@ export default function OpenMap() {
   //   preDisplay[i] = useCallback(handlerCreator(i), []);
   // }
   // const handleDisplay = useCallback(preDisplay, []);
+
+
+
+  // const handlerCreator = (index) => {
+  //   return () => {
+  //     const newArray = new Array(totalPeeps).fill(false);
+  //     newArray[index] = true;
+  //     setIsClicked(newArray);
+  //   };
+  // };
+  // const preDisplay = new Array(totalPeeps);
+  // for (let i = 0; i < totalPeeps ; i++) {
+  //   preDisplay[i] = handlerCreator(i);
+  //   }
+  // const handleDisplay = useCallback(preDisplay, [totalPeeps]);
+  // console.log(handleDisplay2, handleDisplay)
