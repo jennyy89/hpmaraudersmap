@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "./MongoCharacters.css";
 import useMongo from "./useMongo";
-import Card from "./Card";
 import Card2 from "./Card2";
 
 export default function MongoCharacters({ addHandler }) {
@@ -36,6 +35,8 @@ const newPost = {
     addHandler();
   };
   const handleDisplay = (index) => {
+    console.log("inside",isClicked)
+
     setIsClicked(
       isClicked.map((value, counter) => (counter === index ? !value : value))
     );
@@ -46,9 +47,13 @@ const newPost = {
     setPost(newObj);
   };
   const handleClose = (index) => {
-    const newArray = new Array(totalPeeps).fill(false);
+    const newArray = new Array(totalPeeps+1).fill(false);
     setIsClicked(newArray);
     };
+  const handleDelete = (id) => { 
+    del(id); 
+    addHandler();
+  }
   return (
     <div className="char_Container">
       <h2>Staff & Students</h2>
@@ -66,14 +71,13 @@ const newPost = {
             <Card2
               character={person}
               index={index}
-              handleDelete={del}
+              handleDelete={handleDelete}
               edit={edit}
               info={info}
               newPut={newPost}
               key={index}
               addHandler={addHandler}
               handleDisplay={handleClose}
-
             />
           )}
         </div>
