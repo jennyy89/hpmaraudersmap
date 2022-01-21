@@ -21,9 +21,7 @@ const  Steps = memo( ({person, index, handleDisplay}) => {
       <div
         className="nameTag"
         style={CSSVar}
-        onClick={
-          handleDisplay[index]
-        }
+        onClick={handleDisplay[index]}
       >
         {person.name}
       </div>
