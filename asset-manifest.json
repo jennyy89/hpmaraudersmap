@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/hpmaraudersmap/static/css/main.81c61bbe.chunk.css",
+    "main.js": "/hpmaraudersmap/static/js/main.aabcde87.chunk.js",
+    "main.js.map": "/hpmaraudersmap/static/js/main.aabcde87.chunk.js.map",
+    "runtime-main.js": "/hpmaraudersmap/static/js/runtime-main.48597059.js",
+    "runtime-main.js.map": "/hpmaraudersmap/static/js/runtime-main.48597059.js.map",
+    "static/js/2.db32ace6.chunk.js": "/hpmaraudersmap/static/js/2.db32ace6.chunk.js",
+    "static/js/2.db32ace6.chunk.js.map": "/hpmaraudersmap/static/js/2.db32ace6.chunk.js.map",
+    "index.html": "/hpmaraudersmap/index.html",
+    "static/css/main.81c61bbe.chunk.css.map": "/hpmaraudersmap/static/css/main.81c61bbe.chunk.css.map",
+    "static/js/2.db32ace6.chunk.js.LICENSE.txt": "/hpmaraudersmap/static/js/2.db32ace6.chunk.js.LICENSE.txt",
+    "static/media/footsteps.8c7ae446.png": "/hpmaraudersmap/static/media/footsteps.8c7ae446.png",
+    "static/media/logo.e741683a.png": "/hpmaraudersmap/static/media/logo.e741683a.png",
+    "static/media/MongoCharacters.css": "/hpmaraudersmap/static/media/scroll.4e155aa1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48597059.js",
+    "static/js/2.db32ace6.chunk.js",
+    "static/css/main.81c61bbe.chunk.css",
+    "static/js/main.aabcde87.chunk.js"
+  ]
+}
